@@ -4,6 +4,8 @@ import swCharacters from "../../data/characters.json";
 import swPlanets from "../../data/planets.json";
 import swStarships from "../../data/starships.json";
 
+import { ItemLists } from "../sw-item-lists";
+
 export const Content = ({handleCreateFan}) => {
     const [selector, setSelector] = useState("Characters");
     
@@ -27,64 +29,34 @@ export const Content = ({handleCreateFan}) => {
 
             </select>
         {selector ==="Characters" && swCharacters.map((character)=>(
-            <div 
-            key={character.name}
-            className="item-list-layout">
-              <div>
-                <p> Name: {character.name}</p>
-                <p> Genger: {character.gender}</p>
-                <p> Birthday: {character.birth_year}</p>
-              </div>
-              <div className="item-image-layout">
-              <button className="favorite-button"
-              onClick={()=>handleCreateFan(character)}
-              >I am your fan!!!!!</button> 
-              <img 
-                className="item-image"
-                src={character.url}
-                alt=""
-                />
-              </div>
-            </div> 
+           <ItemLists 
+           key={character.name} 
+           item={character}
+           handleCreateFan={handleCreateFan}
+           type = "characters">
+            <p> Genger: {character.gender}</p>
+            <p> Birthday: {character.birth_year}</p>
+            </ItemLists>
           ))}
           {selector ==="Planets" && swPlanets.map((planet)=>(
-            <div 
-            key={planet.name}
-            className="item-list-layout">
-              <div>
-                <p> Name: {planet.name}</p>
+            <ItemLists 
+            key={planet.name} 
+            item={planet}
+            handleCreateFan={handleCreateFan}
+            type = "planets">
                 <p> Climate: {planet.climate}</p>
                 <p> Terrain: {planet.terrain}</p>
-              </div>
-              <div className="item-image-layout">
-        
-              <img 
-                className="item-image"
-                src={planet.url}
-                alt=""
-                />
-              </div>
-            </div> 
-          ))}
+              </ItemLists>          ))}
           {selector==="Starships" && swStarships.map((ship)=> (
-            <div 
-            key={ship.name}
-            className="item-list-layout">
-              <div>
-                <p> Name: {ship.name}</p>
-                <p> Model: {ship.model}</p>
-                <p> Manufacturer: {ship.manufacturer}</p>
-              </div>
-              <div className="item-image-layout">
-              
-              <img 
-                className="item-image"
-                src={ship.url}
-                alt=""
-                />
-              </div>
-                </div> 
-          ))}
+             <ItemLists 
+             key={ship.name} 
+             item={ship}
+             handleCreateFan={handleCreateFan}
+             type = "ships">
+              <p> Model: {ship.model}</p>
+              <p> Manufacturer: {ship.manufacturer}</p>
+               </ItemLists>
+          ))}  
           
           </div>
         
