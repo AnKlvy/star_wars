@@ -1,13 +1,22 @@
+import { useState } from "react";
+
 import {Header} from "./components/header"
 import {Content} from "./components/content"
 
 
 function App() {
+  const [fan,setFan] = useState("")
+  const handleCreateFan = ({name})=>{
+    setFan(name);
+}
+
+
+
   return (
     <>
-    <Header/>
+    <Header fan={fan}/>
     <hr/>
-    <Content/>
+    <Content handleCreateFan={handleCreateFan}/>
     </>
   );
 }
