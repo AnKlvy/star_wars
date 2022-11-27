@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState  } from "react";
+import { DefaultContex } from "./Context";
 
 import {Header} from "./components/header"
 import {Content} from "./components/content"
@@ -13,11 +14,11 @@ function App() {
 
 
   return (
-    <>
+    <DefaultContex.Provider value={{handleCreateFan}}>
     <Header fan={fan}/>
     <hr/>
-    <Content handleCreateFan={handleCreateFan}/>
-    </>
+    <Content/>
+    </DefaultContex.Provider>
   );
 }
 

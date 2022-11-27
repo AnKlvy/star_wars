@@ -4,6 +4,7 @@ import swCharacters from "../../data/characters.json";
 import swPlanets from "../../data/planets.json";
 import swStarships from "../../data/starships.json";
 
+import { ItemSpisok } from "../sw-item-spisok";
 import { ItemLists } from "../sw-item-lists";
 
 export const Content = ({handleCreateFan}) => {
@@ -32,29 +33,26 @@ export const Content = ({handleCreateFan}) => {
            <ItemLists 
            key={character.name} 
            item={character}
-           handleCreateFan={handleCreateFan}
            type = "characters">
-            <p> Genger: {character.gender}</p>
-            <p> Birthday: {character.birth_year}</p>
+            <ItemSpisok> Genger: {character.gender}</ItemSpisok>
+            <ItemSpisok> Birthday: {character.birth_year}</ItemSpisok>
             </ItemLists>
           ))}
           {selector ==="Planets" && swPlanets.map((planet)=>(
             <ItemLists 
             key={planet.name} 
             item={planet}
-            handleCreateFan={handleCreateFan}
             type = "planets">
-                <p> Climate: {planet.climate}</p>
-                <p> Terrain: {planet.terrain}</p>
+                <ItemSpisok> Climate: {planet.climate}</ItemSpisok>
+                <ItemSpisok> Terrain: {planet.terrain}</ItemSpisok>
               </ItemLists>          ))}
           {selector==="Starships" && swStarships.map((ship)=> (
              <ItemLists 
              key={ship.name} 
              item={ship}
-             handleCreateFan={handleCreateFan}
              type = "ships">
-              <p> Model: {ship.model}</p>
-              <p> Manufacturer: {ship.manufacturer}</p>
+              <ItemSpisok> Model: {ship.model}</ItemSpisok>
+              <ItemSpisok> Manufacturer: {ship.manufacturer}</ItemSpisok>
                </ItemLists>
           ))}  
           

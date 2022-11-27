@@ -1,4 +1,8 @@
-export const ItemLists = ({item, handleCreateFan, children, type})=>{
+import { useContext } from "react"
+import { DefaultContex } from "../../Context"
+
+export const ItemLists = ({item, children, type})=>{
+  const {handleCreateFan}= useContext(DefaultContex)
     return (
         <div 
         key={item.name}
