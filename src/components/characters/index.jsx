@@ -8,6 +8,8 @@ import axios from "axios";
 
 import { ItemSpisok } from "../sw-item-spisok";
 import { ItemLists } from "../sw-item-lists";
+import Grid from '@mui/material/Grid'
+
 
 export const Characters = () => {
     // const [selector, setSelector] = useState("Characters");
@@ -36,7 +38,24 @@ export const Characters = () => {
     
 
     return(
-        <div className="Characters-layout">
+        <>
+        <Grid container spacing={2}>
+    
+        
+        {characters.map((character)=>(
+            <Grid item xs={4}>
+           <ItemLists 
+           key={character.name} 
+           item={character}
+           type = "characters">
+            <p> Genger: {character.gender}</p>
+            <p> Birthday: {character.birth_year}</p>
+            </ItemLists>
+            </Grid>
+          ))}
+      
+       
+      </Grid>
             {/* <select 
             value={selector}
             onChange={handleSelectorChange}
@@ -47,20 +66,7 @@ export const Characters = () => {
                 <option>Starships</option>
 
             </select> */}
-        {characters.map((character)=>(
-           <ItemLists 
-           key={character.name} 
-           item={character}
-           type = "characters">
-            <ItemSpisok> Genger: {character.gender}</ItemSpisok>
-            <ItemSpisok> Birthday: {character.birth_year}</ItemSpisok>
-            </ItemLists>
-          ))}
-         
-         
-          
-          </div>
-        
-
+       
+    </>
     )
 }
