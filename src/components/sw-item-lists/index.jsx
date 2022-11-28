@@ -1,3 +1,4 @@
+import { Button } from "@mui/material"
 import { useContext } from "react"
 import { DefaultContex } from "../../Context"
 
@@ -13,9 +14,10 @@ export const ItemLists = ({item, children, type})=>{
           </div>
           <div className="item-image-layout">
             {type==="characters" && (
-          <button className="favorite-button"
+              
+          <Button style={{background:'black'}} className="favorite-button"
           onClick={()=>handleCreateFan(item)}
-          >I am your fan!!!!!</button> 
+          >I am your fan!!!!!</Button> 
             )}
           <img 
             className="item-image"

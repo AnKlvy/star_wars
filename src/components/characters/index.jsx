@@ -43,13 +43,13 @@ export const Characters = () => {
     
         
         {characters.map((character)=>(
-            <Grid item xs={4}>
+            <Grid item xs={4} >
            <ItemLists 
            key={character.name} 
            item={character}
            type = "characters">
-            <p> Genger: {character.gender}</p>
-            <p> Birthday: {character.birth_year}</p>
+            <ItemSpisok> Genger: {character.gender}</ItemSpisok>
+            <ItemSpisok> Birthday: {character.birth_year}</ItemSpisok>
             </ItemLists>
             </Grid>
           ))}
