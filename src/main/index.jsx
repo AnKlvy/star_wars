@@ -1,6 +1,6 @@
 import { Button } from "@mui/material"
 import { Link, Outlet } from "react-router-dom"
-import { Content } from "../components/content"
+// import { Content } from "../components/characters"
 import { Header } from "../components/header"
 
 
