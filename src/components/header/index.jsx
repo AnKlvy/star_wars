@@ -5,6 +5,10 @@ import {ReactComponent as InstagramLogoSVG} from "../../assets/instagram.svg";
 import {ReactComponent as TwitterLogoSVG} from "../../assets/twitter.svg";
 import {ReactComponent as YoutubeLogoSVG} from "../../assets/youtube.svg";
 
+import { AppBarComp } from "../navbar";
+import { FanContext } from "../../Context";
+import { useContext } from "react";
+
 
 
 const swLinks = [
@@ -30,9 +34,13 @@ const swLinks = [
     }
     ]
 
-export const Header = ({fan}) => {
+  
+
+export const Header = ({}) => {
+  const {fan}=useContext(FanContext);
     return (
     <><header>
+      <AppBarComp/>
     <div className="links-layout">
       {swLinks.map((link)=>(
         <a
@@ -46,7 +54,7 @@ export const Header = ({fan}) => {
         </a>
       ))}
     </div>
-    <StarWarsLogoSVG/>
+    
     <div className="search-layout">
       <IconSearchSVG className="search-icon"/>
       <input placeholder="Search Star Wars" 

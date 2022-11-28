@@ -7,7 +7,7 @@ import swStarships from "../../data/starships.json";
 import { ItemSpisok } from "../sw-item-spisok";
 import { ItemLists } from "../sw-item-lists";
 
-export const Content = ({handleCreateFan}) => {
+export const Content = ({}) => {
     const [selector, setSelector] = useState("Characters");
     
     const handleSelectorChange = (event) => {
