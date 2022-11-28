@@ -1,19 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-import swCharacters from "../../data/characters.json";
-import swPlanets from "../../data/planets.json";
-import swStarships from "../../data/starships.json";
+
+// import swCharacters from "../../data/characters.json";
+// import swPlanets from "../../data/planets.json";
+// import swStarships from "../../data/starships.json";
 
 import { ItemSpisok } from "../sw-item-spisok";
 import { ItemLists } from "../sw-item-lists";
 
-export const Characters = ({}) => {
+export const Characters = () => {
     // const [selector, setSelector] = useState("Characters");
     
     // const handleSelectorChange = (event) => {
     //     setSelector(event.target.value);
     // };
-   
+
+    const [characters, setCharacters]= useState([])
+
+    useEffect(()=> {
+        getAllItems();
+      },[]);
+      
+      const getAllItems=()=>{
+        axios
+          .get(
+           `https://swapi.py4e.com/api/people/`)
+           .then((res)=>res.data)
+           .then((res)=>{
+            console.log(res)
+            setCharacters(res.results)
+               });      
+      }
 
     
 
@@ -29,7 +47,7 @@ export const Characters = ({}) => {
                 <option>Starships</option>
 
             </select> */}
-        {swCharacters.map((character)=>(
+        {characters.map((character)=>(
            <ItemLists 
            key={character.name} 
            item={character}

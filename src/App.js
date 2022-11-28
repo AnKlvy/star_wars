@@ -1,4 +1,4 @@
-import { useState  } from "react";
+import { useEffect, useState  } from "react";
 import { DefaultContex, FanContext } from "./Context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -7,6 +7,7 @@ import {Characters} from "./components/characters"
 import { Main } from "./main";
 import { Planets } from "./components/planets";
 import { Starships } from "./components/starships";
+import axios from "axios";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const handleCreateFan = ({name})=>{
     setFan(name);
 }
+
 
 
 
