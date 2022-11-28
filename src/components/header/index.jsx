@@ -56,9 +56,7 @@ export const Header = ({}) => {
     </div>
     
     <div className="search-layout">
-      <IconSearchSVG className="search-icon"/>
-      <input placeholder="Search Star Wars" 
-      type="text"></input>
+      
       <div>I am fan of: {fan}</div>
     </div>
     </header>

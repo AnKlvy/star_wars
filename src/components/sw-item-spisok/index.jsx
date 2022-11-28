@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 
 export const ItemSpisok = ({children}) => {
   return (
-          <ListItem divider disablePadding>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemText primary={children} />
             </ListItemButton>

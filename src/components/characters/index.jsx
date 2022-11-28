@@ -9,6 +9,7 @@ import axios from "axios";
 import { ItemSpisok } from "../sw-item-spisok";
 import { ItemLists } from "../sw-item-lists";
 import Grid from '@mui/material/Grid'
+import { Box } from "@mui/material";
 
 
 export const Characters = () => {
@@ -39,11 +40,12 @@ export const Characters = () => {
 
     return(
         <>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} >
     
         
         {characters.map((character)=>(
             <Grid item xs={4} >
+                <Box divider>
            <ItemLists 
            key={character.name} 
            item={character}
@@ -51,6 +53,7 @@ export const Characters = () => {
             <ItemSpisok> Genger: {character.gender}</ItemSpisok>
             <ItemSpisok> Birthday: {character.birth_year}</ItemSpisok>
             </ItemLists>
+            </Box>
             </Grid>
           ))}
       

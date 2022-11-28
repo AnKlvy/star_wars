@@ -21,7 +21,7 @@ export const ItemLists = ({item, children, type})=>{
             )}
           <img 
             className="item-image"
-            src={item.url}
+            src={item.img}
             alt=""
             />
           </div>
