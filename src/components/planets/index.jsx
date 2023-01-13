@@ -29,9 +29,10 @@ export const Planets = ({}) => {
 <>
 <Grid container spacing={2} >
 {planets.map((planet)=>(
-      <Grid item xs={4} >
-    <ItemLists 
+      <Grid
     key={planet.name} 
+       item xs={4} >
+    <ItemLists 
     item={planet}
     type = "planets">
         <ItemSpisok> Climate: {planet.climate}</ItemSpisok>
